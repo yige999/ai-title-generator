@@ -1,16 +1,24 @@
-// app/layout.tsx
-import './globals.css'
-import { ReactNode } from 'react'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';  // 可选，如果有全局 CSS
 
-export const metadata = {
-  title: 'AI Title Generator',
-  description: 'Generate catchy AI-powered titles instantly',
-}
+const inter = Inter({ subsets: ['latin'] });
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export const metadata: Metadata = {
+  title: 'Free AI YouTube Title Generator 2025',
+  description: 'Generate SEO-optimized YouTube titles with AI. No signup required.',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>
+        {children}
+      </body>
     </html>
-  )
+  );
 }
